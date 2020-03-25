@@ -1,0 +1,6 @@
+framework module CocoaDownloadSDK {
+  umbrella header "CocoaDownloadSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

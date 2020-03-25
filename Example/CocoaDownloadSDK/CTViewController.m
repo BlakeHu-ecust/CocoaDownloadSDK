@@ -7,6 +7,8 @@
 //
 
 #import "CTViewController.h"
+#import <AFNetworking/AFNetworking.h>
+#import <CocoaDownloadSDK/CTTest.h>
 
 @interface CTViewController ()
 
@@ -18,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [[[CTTest alloc]init] sayHello];
 }
 
 - (void)didReceiveMemoryWarning

@@ -38,10 +38,10 @@
 
 /* Begin PBXFileReference section */
 		383F1E207B6818FC37B35A94 /* Pods_CocoaDownloadSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaDownloadSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E5220C664ABE89E6BAA2618 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3E5220C664ABE89E6BAA2618 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4D713AAF388CB0AB775B23CA /* Pods_CocoaDownloadSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaDownloadSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F094D1BA3DD9BA326C9986 /* Pods-CocoaDownloadSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Tests/Pods-CocoaDownloadSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5FFA3171778686DB105B5867 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5FFA3171778686DB105B5867 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CocoaDownloadSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaDownloadSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,7 +63,7 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8FB7029933829FC3D1C55C1F /* CocoaDownloadSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CocoaDownloadSDK.podspec; path = ../CocoaDownloadSDK.podspec; sourceTree = "<group>"; };
+		8FB7029933829FC3D1C55C1F /* CocoaDownloadSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CocoaDownloadSDK.podspec; path = ../CocoaDownloadSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A82BA16B97493AF4F244CF9D /* Pods-CocoaDownloadSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Example/Pods-CocoaDownloadSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CD7AE2EAFCAD1A86C206E4F0 /* Pods-CocoaDownloadSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Tests/Pods-CocoaDownloadSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5168CD935EA95A74931D83A /* Pods-CocoaDownloadSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Example/Pods-CocoaDownloadSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 				CD7AE2EAFCAD1A86C206E4F0 /* Pods-CocoaDownloadSDK_Tests.debug.xcconfig */,
 				56F094D1BA3DD9BA326C9986 /* Pods-CocoaDownloadSDK_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -248,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "695081933@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 3288Q948AH;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -258,6 +260,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -302,10 +305,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CocoaDownloadSDK_Example/Pods-CocoaDownloadSDK_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaDownloadSDK/CocoaDownloadSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDownloadSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +499,7 @@
 			baseConfigurationReference = A82BA16B97493AF4F244CF9D /* Pods-CocoaDownloadSDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3288Q948AH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaDownloadSDK/CocoaDownloadSDK-Prefix.pch";
 				INFOPLIST_FILE = "CocoaDownloadSDK/CocoaDownloadSDK-Info.plist";
@@ -510,6 +516,7 @@
 			baseConfigurationReference = E5168CD935EA95A74931D83A /* Pods-CocoaDownloadSDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3288Q948AH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocoaDownloadSDK/CocoaDownloadSDK-Prefix.pch";
 				INFOPLIST_FILE = "CocoaDownloadSDK/CocoaDownloadSDK-Info.plist";
