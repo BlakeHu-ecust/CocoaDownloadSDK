@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A userful download SDK.",
   "description": "为小翼管家提供的下载SDK",
-  "homepage": "https://github.com/695081933@qq.com/CocoaDownloadSDK",
+  "homepage": "https://github.com/BlakeHu-ecust/CocoaDownloadSDK",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "Yue Hu": "huyue@hsgene.com"
   },
   "source": {
-    "git": "https://github.com/695081933@qq.com/CocoaDownloadSDK.git",
+    "git": "https://github.com/BlakeHu-ecust/CocoaDownloadSDK.git",
     "tag": "0.1.0"
   },
   "platforms": {
