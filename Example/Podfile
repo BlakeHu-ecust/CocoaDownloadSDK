@@ -1,13 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 platform :ios, '8.0'
 
 target 'CocoaDownloadSDK_Example' do
   pod 'CocoaDownloadSDK', :path => '../'
-
-  target 'CocoaDownloadSDK_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

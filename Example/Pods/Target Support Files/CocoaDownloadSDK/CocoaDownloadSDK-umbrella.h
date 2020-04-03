@@ -10,7 +10,18 @@
 #endif
 #endif
 
-#import "CTTest.h"
+#import "GTMBase64.h"
+#import "GTMDefines.h"
+#import "CocoaDownloadConfig.h"
+#import "CocoaDownloadManager.h"
+#import "CocoaDownloadSDK.h"
+#import "CocoaDownloadSession.h"
+#import "CocoaDownloadTask.h"
+#import "CocoaNormalTableViewCell.h"
+#import "CocoaNormalTableViewCell+cExtension.h"
+#import "NSURL+cExtension.h"
+#import "NSURLSessionTask+cExtension.h"
+#import "Reachability.h"
 
 FOUNDATION_EXPORT double CocoaDownloadSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char CocoaDownloadSDKVersionString[];

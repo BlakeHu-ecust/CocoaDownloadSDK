@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C087E93CA3BFFB30A58D10A /* Pods_CocoaDownloadSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D713AAF388CB0AB775B23CA /* Pods_CocoaDownloadSDK_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -24,6 +23,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A9AD04FAE055E997147BF59E /* Pods_CocoaDownloadSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383F1E207B6818FC37B35A94 /* Pods_CocoaDownloadSDK_Example.framework */; };
+		AFD01970242DE9E100BC927F /* CTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD0196E242DE9E100BC927F /* CTTableViewCell.m */; };
+		AFD01971242DE9E100BC927F /* CTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD0196F242DE9E100BC927F /* CTTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 /* Begin PBXFileReference section */
 		383F1E207B6818FC37B35A94 /* Pods_CocoaDownloadSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaDownloadSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5220C664ABE89E6BAA2618 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4D713AAF388CB0AB775B23CA /* Pods_CocoaDownloadSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaDownloadSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56F094D1BA3DD9BA326C9986 /* Pods-CocoaDownloadSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Tests/Pods-CocoaDownloadSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5FFA3171778686DB105B5867 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CocoaDownloadSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaDownloadSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,7 +64,10 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FB7029933829FC3D1C55C1F /* CocoaDownloadSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CocoaDownloadSDK.podspec; path = ../CocoaDownloadSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A82BA16B97493AF4F244CF9D /* Pods-CocoaDownloadSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Example/Pods-CocoaDownloadSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CD7AE2EAFCAD1A86C206E4F0 /* Pods-CocoaDownloadSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Tests/Pods-CocoaDownloadSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AFD01964242D95A700BC927F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AFD0196D242DE9E100BC927F /* CTTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTTableViewCell.h; sourceTree = "<group>"; };
+		AFD0196E242DE9E100BC927F /* CTTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTTableViewCell.m; sourceTree = "<group>"; };
+		AFD0196F242DE9E100BC927F /* CTTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CTTableViewCell.xib; sourceTree = "<group>"; };
 		E5168CD935EA95A74931D83A /* Pods-CocoaDownloadSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaDownloadSDK_Example.release.xcconfig"; path = "Target Support Files/Pods-CocoaDownloadSDK_Example/Pods-CocoaDownloadSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +90,6 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				2C087E93CA3BFFB30A58D10A /* Pods_CocoaDownloadSDK_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +101,6 @@
 			children = (
 				A82BA16B97493AF4F244CF9D /* Pods-CocoaDownloadSDK_Example.debug.xcconfig */,
 				E5168CD935EA95A74931D83A /* Pods-CocoaDownloadSDK_Example.release.xcconfig */,
-				CD7AE2EAFCAD1A86C206E4F0 /* Pods-CocoaDownloadSDK_Tests.debug.xcconfig */,
-				56F094D1BA3DD9BA326C9986 /* Pods-CocoaDownloadSDK_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -130,12 +129,12 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFD01964242D95A700BC927F /* libsqlite3.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				383F1E207B6818FC37B35A94 /* Pods_CocoaDownloadSDK_Example.framework */,
-				4D713AAF388CB0AB775B23CA /* Pods_CocoaDownloadSDK_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +147,9 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CTViewController.h */,
 				6003F5A6195388D20070C39A /* CTViewController.m */,
+				AFD0196D242DE9E100BC927F /* CTTableViewCell.h */,
+				AFD0196E242DE9E100BC927F /* CTTableViewCell.m */,
+				AFD0196F242DE9E100BC927F /* CTTableViewCell.xib */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -222,7 +224,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "CocoaDownloadSDK_Tests" */;
 			buildPhases = (
-				D43BA160AD38C1B37879E346 /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
@@ -282,6 +283,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				AFD01971242DE9E100BC927F /* CTTableViewCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -305,12 +307,10 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CocoaDownloadSDK_Example/Pods-CocoaDownloadSDK_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaDownloadSDK/CocoaDownloadSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaDownloadSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,28 +340,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D43BA160AD38C1B37879E346 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CocoaDownloadSDK_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -371,6 +349,7 @@
 			files = (
 				6003F59E195388D20070C39A /* CTAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CTViewController.m in Sources */,
+				AFD01970242DE9E100BC927F /* CTTableViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +509,6 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD7AE2EAFCAD1A86C206E4F0 /* Pods-CocoaDownloadSDK_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -555,7 +533,6 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56F094D1BA3DD9BA326C9986 /* Pods-CocoaDownloadSDK_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

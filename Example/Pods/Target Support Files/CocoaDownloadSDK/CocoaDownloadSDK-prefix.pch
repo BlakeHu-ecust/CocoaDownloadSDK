@@ -10,3 +10,7 @@
 #endif
 #endif
 
+#import "CocoaDownloadConfig.h"
+#import "NSURL+cExtension.h"
+#import "CocoaNormalTableViewCell+cExtension.h"
+#import "NSURLSessionTask+cExtension.h"
