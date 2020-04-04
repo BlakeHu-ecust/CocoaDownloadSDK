@@ -164,7 +164,7 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
         return;
     }
     
-    NSInteger fileSize = [self fileSizeWithPath:locationString];
+    int64_t fileSize = [self fileSizeWithPath:locationString];
     BOOL isCompltedFile = (fileSize > 0) && (fileSize == task.fileSize);
     if (!isCompltedFile) {
         task.status = Failed;

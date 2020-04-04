@@ -1,5 +1,5 @@
 PODS:
-  - CocoaDownloadSDK (1.0.2)
+  - CocoaDownloadSDK (1.0.3)
 
 DEPENDENCIES:
   - CocoaDownloadSDK (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CocoaDownloadSDK: d3bd5f108f390dc250d2fcc85815cc53c5221819
+  CocoaDownloadSDK: adf265b9eaace4fb33e1beda091dadc1c6841b72
 
 PODFILE CHECKSUM: 8013560c7434a53742fbef5208c31ab75222901a
 
