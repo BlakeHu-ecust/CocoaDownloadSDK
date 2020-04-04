@@ -6,7 +6,9 @@
 //
 
 #import "CocoaDownloadSession.h"
+#import "CocoaDownloadConfig.h"
 #import "CocoaDownloadManager.h"
+#import "NSURLSessionTask+cExtension.h"
 
 static CocoaDownloadSession *shared = nil;
 

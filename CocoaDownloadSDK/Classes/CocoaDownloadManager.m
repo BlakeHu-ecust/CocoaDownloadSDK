@@ -6,6 +6,7 @@
 //
 
 #import "CocoaDownloadManager.h"
+#import "CocoaDownloadConfig.h"
 #import "CocoaDownloadSession.h"
 #import "CocoaDownloadTask.h"
 #import "Reachability.h"
@@ -187,10 +188,12 @@ static CocoaDownloadManager *shared = nil;
 //允许蜂窝网下载
 - (void)enableCellular{
     [self setAllowCellular:YES];
+    NSLog(@"蜂窝网已打开");
 }
 //禁止蜂窝网下载
 - (void)disableCellular{
     [self setAllowCellular:NO];
+    NSLog(@"蜂窝网已关闭");
 }
 
 - (void)setAllowCellular:(BOOL)allow{

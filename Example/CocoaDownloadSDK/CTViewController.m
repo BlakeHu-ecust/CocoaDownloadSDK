@@ -28,7 +28,7 @@
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"CTTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     _tableView.tableFooterView = [UIView new];
-    [[CocoaDownloadManager sharedInstance] disableCellular];
+    //[[CocoaDownloadManager sharedInstance] disableCellular];
     [[CocoaDownloadManager sharedInstance] setDefalutDownloadPath:@"Test"];
 
     //[CocoaDownloadManager sharedInstance].delegate = self;

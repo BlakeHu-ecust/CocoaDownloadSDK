@@ -9,8 +9,12 @@
 #import "CocoaDownloadTask.h"
 #import "CocoaDownloadManager.h"
 #import "CocoaDownloadSession.h"
-#import <CommonCrypto/CommonCryptor.h>
-#import "GTMBase64.h"
+#import "NSURL+cExtension.h"
+#import "CocoaDownloadConfig.h"
+#import "AESCrypt.h"
+#import "NSData+Base64.h"
+#import "NSData+CommonCrypto.h"
+#import "NSString+Base64.h"
 
 //密钥
 #define key            @"cocoadownload"
@@ -104,7 +108,7 @@
 
 - (void)setTitle:(NSString *)title{
     _title = title;
-    _task_id = [self encrypt:[NSString stringWithFormat:@"%@-%@-%@",[self.download_url absoluteString],title,_localPath]];
+    _task_id = [self encrypt:[NSString stringWithFormat:@"%@-%@-%@",[self.download_url absoluteString],title,_localPath] password:@"cocoadownloadsdk"];
 }
 - (void)setProgress:(CGFloat)progress{
     _progress = progress;
@@ -156,38 +160,10 @@
 }
 
 #pragma mark - 加密方法
-- (NSString*)encrypt:(NSString*)string {
-    NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
-    size_t plainTextBufferSize = [data length];
-    const void *vplainText = (const void *)[data bytes];
-    
-    CCCryptorStatus ccStatus;
-    uint8_t *bufferPtr = NULL;
-    size_t bufferPtrSize = 0;
-    size_t movedBytes = 0;
-    
-    bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES) & ~(kCCBlockSize3DES - 1);
-    bufferPtr = malloc( bufferPtrSize * sizeof(uint8_t));
-    memset((void *)bufferPtr, 0x0, bufferPtrSize);
-    
-    const void *vkey = (const void *) [key UTF8String];
-    const void *vinitVec = (const void *) [iv UTF8String];
-    
-    ccStatus = CCCrypt(kCCEncrypt,
-                       kCCAlgorithm3DES,
-                       kCCOptionPKCS7Padding,
-                       vkey,
-                       kCCKeySize3DES,
-                       vinitVec,
-                       vplainText,
-                       plainTextBufferSize,
-                       (void *)bufferPtr,
-                       bufferPtrSize,
-                       &movedBytes);
-    
-    NSData *myData = [NSData dataWithBytes:(const void *)bufferPtr length:(NSUInteger)movedBytes];
-    NSString *result = [GTMBase64 stringByEncodingData:myData];
-    return result;
+- (NSString *)encrypt:(NSString *)message password:(NSString *)password {
+  NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+  NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
+  return base64EncodedString;
 }
 
 @end

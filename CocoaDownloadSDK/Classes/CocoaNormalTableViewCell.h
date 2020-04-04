@@ -6,11 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CocoaNormalTableViewCell+cExtension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class CocoaDownloadTask;
 @interface CocoaNormalTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) CocoaDownloadTask *task;
 
 - (void)setUI;
 
