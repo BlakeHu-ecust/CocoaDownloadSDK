@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CocoaDownloadSDK'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'A userful download SDK.'
 
 # This description is used to generate tags and improve search results.
@@ -36,4 +36,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
+  s.dependency 'Reachability'
 end

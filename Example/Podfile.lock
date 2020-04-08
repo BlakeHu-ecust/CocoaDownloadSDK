@@ -1,15 +1,22 @@
 PODS:
-  - CocoaDownloadSDK (1.0.3)
+  - CocoaDownloadSDK (1.0.3):
+    - Reachability
+  - Reachability (3.2)
 
 DEPENDENCIES:
   - CocoaDownloadSDK (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Reachability
 
 EXTERNAL SOURCES:
   CocoaDownloadSDK:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CocoaDownloadSDK: adf265b9eaace4fb33e1beda091dadc1c6841b72
+  CocoaDownloadSDK: 0668911875466feebf89449d90cea357a03abb85
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
 PODFILE CHECKSUM: 8013560c7434a53742fbef5208c31ab75222901a
 
