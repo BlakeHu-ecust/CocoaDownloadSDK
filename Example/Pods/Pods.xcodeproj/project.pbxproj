@@ -31,14 +31,8 @@
 		9F736E1A2EC945CD366E7E04FF3083EE /* Pods-CocoaDownloadSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59F47D0CC32406A43CB051901BDCB432 /* Pods-CocoaDownloadSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0982A809BC6BE80342176CA33C29338 /* CocoaDownloadTask.h in Headers */ = {isa = PBXBuildFile; fileRef = DF5202D6144D23A1AC9AC735AC0409D6 /* CocoaDownloadTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A10F9365200F2874C05F4E08E0ECBCDB /* CocoaDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1418BDDBF574A90039F6E29A0365ECF /* CocoaDownloadManager.m */; };
-		AF1AE757243D70A100ADC03A /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1AE74F243D70A100ADC03A /* NSString+Base64.m */; };
-		AF1AE758243D70A100ADC03A /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1AE750243D70A100ADC03A /* AESCrypt.m */; };
-		AF1AE759243D70A100ADC03A /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AF1AE751243D70A100ADC03A /* NSData+Base64.h */; };
-		AF1AE75A243D70A100ADC03A /* NSData+CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = AF1AE752243D70A100ADC03A /* NSData+CommonCrypto.h */; };
-		AF1AE75B243D70A100ADC03A /* AESCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = AF1AE753243D70A100ADC03A /* AESCrypt.h */; };
-		AF1AE75C243D70A100ADC03A /* NSString+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = AF1AE754243D70A100ADC03A /* NSString+Base64.h */; };
-		AF1AE75D243D70A100ADC03A /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1AE755243D70A100ADC03A /* NSData+CommonCrypto.m */; };
-		AF1AE75E243D70A100ADC03A /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1AE756243D70A100ADC03A /* NSData+Base64.m */; };
+		AF0643162440472B00C1F236 /* NSString+cExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = AF0643142440472B00C1F236 /* NSString+cExtension.h */; };
+		AF0643172440472B00C1F236 /* NSString+cExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0643152440472B00C1F236 /* NSString+cExtension.m */; };
 		D3BE18EF3CAC8F5AFFC0F65D44203918 /* CocoaDownloadSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D74EC91FCD42502D0CF5CF49839FE1 /* CocoaDownloadSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7EB71440409C2F0C8AAB3678F9C1FCE /* NSURLSessionTask+cExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A99EA8CB203864FA0976D25AB6EEF620 /* NSURLSessionTask+cExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF81092806321547FDC0D20E4BC0EA72 /* CocoaDownloadManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B0E3444B3AC742F3922A55721A35866C /* CocoaDownloadManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,14 +95,8 @@
 		A99EA8CB203864FA0976D25AB6EEF620 /* NSURLSessionTask+cExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+cExtension.h"; sourceTree = "<group>"; };
 		AB5DBA13C963425EC43D94B30C0B3A62 /* CocoaDownloadConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaDownloadConfig.h; path = CocoaDownloadSDK/Classes/CocoaDownloadConfig.h; sourceTree = "<group>"; };
 		AB7055BCE90ABC41D9C81CA854575AA1 /* CocoaDownloadSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaDownloadSDK-prefix.pch"; sourceTree = "<group>"; };
-		AF1AE74F243D70A100ADC03A /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
-		AF1AE750243D70A100ADC03A /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
-		AF1AE751243D70A100ADC03A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		AF1AE752243D70A100ADC03A /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
-		AF1AE753243D70A100ADC03A /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
-		AF1AE754243D70A100ADC03A /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
-		AF1AE755243D70A100ADC03A /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
-		AF1AE756243D70A100ADC03A /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		AF0643142440472B00C1F236 /* NSString+cExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+cExtension.h"; sourceTree = "<group>"; };
+		AF0643152440472B00C1F236 /* NSString+cExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+cExtension.m"; sourceTree = "<group>"; };
 		B0E3444B3AC742F3922A55721A35866C /* CocoaDownloadManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaDownloadManager.h; path = CocoaDownloadSDK/Classes/CocoaDownloadManager.h; sourceTree = "<group>"; };
 		B1418BDDBF574A90039F6E29A0365ECF /* CocoaDownloadManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CocoaDownloadManager.m; path = CocoaDownloadSDK/Classes/CocoaDownloadManager.m; sourceTree = "<group>"; };
 		B6C17EA3A69CB4BBBA3B676CBD70A135 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -164,17 +152,16 @@
 		2010305AD3979D10AFB120BBBA7CD490 /* CocoaDownloadSDK */ = {
 			isa = PBXGroup;
 			children = (
+				6FC89120EA1F7F1CC057BDC00EFDF86D /* CocoaDownloadSDK.h */,
 				AB5DBA13C963425EC43D94B30C0B3A62 /* CocoaDownloadConfig.h */,
 				B0E3444B3AC742F3922A55721A35866C /* CocoaDownloadManager.h */,
 				B1418BDDBF574A90039F6E29A0365ECF /* CocoaDownloadManager.m */,
-				6FC89120EA1F7F1CC057BDC00EFDF86D /* CocoaDownloadSDK.h */,
 				74B51CF58ABC37244CF326BC010B1E2A /* CocoaDownloadSession.h */,
 				DAC7855A8A44F34CBC25AE73C0488769 /* CocoaDownloadSession.m */,
 				DF5202D6144D23A1AC9AC735AC0409D6 /* CocoaDownloadTask.h */,
 				17A5BD8EB4CE48D9C03F0ED5B0BC550C /* CocoaDownloadTask.m */,
 				3035E7FA7DD0307C8FB07AFC45270352 /* CocoaNormalTableViewCell.h */,
 				53DF0E2ECF92AFCCB15B4E254A61617A /* CocoaNormalTableViewCell.m */,
-				AF1AE74E243D70A000ADC03A /* SSKeychain */,
 				69DEF5B1B48A483E8516C050549AE2BE /* Extension */,
 				44EEAD22758E104D9D9F750DDD3F719A /* Pod */,
 				BC1790C9F4AC75F0547F59DBEDC870F1 /* Support Files */,
@@ -250,6 +237,8 @@
 				6FDC479F4F96FD05276BD498B993AE35 /* NSURL+cExtension.m */,
 				A99EA8CB203864FA0976D25AB6EEF620 /* NSURLSessionTask+cExtension.h */,
 				3A804468E3E2F2AC0DF309F57B9BAEE8 /* NSURLSessionTask+cExtension.m */,
+				AF0643142440472B00C1F236 /* NSString+cExtension.h */,
+				AF0643152440472B00C1F236 /* NSString+cExtension.m */,
 			);
 			name = Extension;
 			path = CocoaDownloadSDK/Classes/Extension;
@@ -278,22 +267,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Reachability";
-			sourceTree = "<group>";
-		};
-		AF1AE74E243D70A000ADC03A /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				AF1AE753243D70A100ADC03A /* AESCrypt.h */,
-				AF1AE750243D70A100ADC03A /* AESCrypt.m */,
-				AF1AE751243D70A100ADC03A /* NSData+Base64.h */,
-				AF1AE756243D70A100ADC03A /* NSData+Base64.m */,
-				AF1AE752243D70A100ADC03A /* NSData+CommonCrypto.h */,
-				AF1AE755243D70A100ADC03A /* NSData+CommonCrypto.m */,
-				AF1AE754243D70A100ADC03A /* NSString+Base64.h */,
-				AF1AE74F243D70A100ADC03A /* NSString+Base64.m */,
-			);
-			name = SSKeychain;
-			path = CocoaDownloadSDK/Classes/SSKeychain;
 			sourceTree = "<group>";
 		};
 		BC1790C9F4AC75F0547F59DBEDC870F1 /* Support Files */ = {
@@ -352,16 +325,13 @@
 			files = (
 				5C8AB0A658BFC6CDB9DA9A876842D5EF /* CocoaDownloadConfig.h in Headers */,
 				EF81092806321547FDC0D20E4BC0EA72 /* CocoaDownloadManager.h in Headers */,
-				AF1AE759243D70A100ADC03A /* NSData+Base64.h in Headers */,
-				AF1AE75B243D70A100ADC03A /* AESCrypt.h in Headers */,
-				AF1AE75C243D70A100ADC03A /* NSString+Base64.h in Headers */,
 				D3BE18EF3CAC8F5AFFC0F65D44203918 /* CocoaDownloadSDK-umbrella.h in Headers */,
 				8012FA9D8162034AED739BFE7EF887D0 /* CocoaDownloadSDK.h in Headers */,
 				216E0DC3360F248D01D0296E9D6057A9 /* CocoaDownloadSession.h in Headers */,
 				A0982A809BC6BE80342176CA33C29338 /* CocoaDownloadTask.h in Headers */,
 				33543DAF63A00460171E09F8B80F1C57 /* CocoaNormalTableViewCell.h in Headers */,
 				90AF6C2574608E494BC35029BE47F23D /* NSURL+cExtension.h in Headers */,
-				AF1AE75A243D70A100ADC03A /* NSData+CommonCrypto.h in Headers */,
+				AF0643162440472B00C1F236 /* NSString+cExtension.h in Headers */,
 				E7EB71440409C2F0C8AAB3678F9C1FCE /* NSURLSessionTask+cExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,14 +490,11 @@
 			files = (
 				A10F9365200F2874C05F4E08E0ECBCDB /* CocoaDownloadManager.m in Sources */,
 				55A7ECD12C245957749CF1B4CE3016C9 /* CocoaDownloadSDK-dummy.m in Sources */,
-				AF1AE75D243D70A100ADC03A /* NSData+CommonCrypto.m in Sources */,
-				AF1AE75E243D70A100ADC03A /* NSData+Base64.m in Sources */,
 				F599CC77B0AAA234EEDF0A928E01A3C0 /* CocoaDownloadSession.m in Sources */,
 				8236F72829CE9FEE0F9DA9133A57002B /* CocoaDownloadTask.m in Sources */,
-				AF1AE757243D70A100ADC03A /* NSString+Base64.m in Sources */,
+				AF0643172440472B00C1F236 /* NSString+cExtension.m in Sources */,
 				57F68EAABAC677320E5E3BCBA5BF8E9C /* CocoaNormalTableViewCell.m in Sources */,
 				82E4D568AB3D7CAAD68756A82B3ACB7F /* NSURL+cExtension.m in Sources */,
-				AF1AE758243D70A100ADC03A /* AESCrypt.m in Sources */,
 				013147B7DCD90AC9D85D397F62FCF322 /* NSURLSessionTask+cExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

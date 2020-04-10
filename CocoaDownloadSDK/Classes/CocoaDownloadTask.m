@@ -11,10 +11,7 @@
 #import "CocoaDownloadSession.h"
 #import "NSURL+cExtension.h"
 #import "CocoaDownloadConfig.h"
-#import "AESCrypt.h"
-#import "NSData+Base64.h"
-#import "NSData+CommonCrypto.h"
-#import "NSString+Base64.h"
+#import "NSString+cExtension.h"
 
 //密钥
 #define key            @"cocoadownload"
@@ -108,7 +105,8 @@
 
 - (void)setTitle:(NSString *)title{
     _title = title;
-    _task_id = [self encrypt:[NSString stringWithFormat:@"%@-%@-%@",[self.download_url absoluteString],title,_localPath] password:@"cocoadownloadsdk"];
+    //_task_id = [self encrypt:[NSString stringWithFormat:@"%@-%@-%@",[self.download_url absoluteString],title,_localPath] password:@"cocoadownloadsdk"];
+    _task_id = [NSString stringWithFormat:@"%@-%@-%@",[self.download_url absoluteString],title,_localPath].md5;
 }
 - (void)setProgress:(CGFloat)progress{
     _progress = progress;
@@ -124,7 +122,8 @@
     if (![[NSFileManager defaultManager]fileExistsAtPath:cacheDocuments]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:cacheDocuments withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    NSString *cacheName = [self.task_id substringFromIndex:[self.task_id length] - 24];
+    //NSString *cacheName = [self.task_id substringFromIndex:[self.task_id length] - 24];
+    NSString *cacheName = self.task_id;
     cacheName = [cacheName stringByReplacingOccurrencesOfString:@"/" withString:@""];
     NSString *cachePath = [cacheDocuments stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",cacheName]];
     self.resumeData = [cachePath stringByAbbreviatingWithTildeInPath];
@@ -160,10 +159,10 @@
 }
 
 #pragma mark - 加密方法
-- (NSString *)encrypt:(NSString *)message password:(NSString *)password {
-  NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
-  NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
-  return base64EncodedString;
-}
+//- (NSString *)encrypt:(NSString *)message password:(NSString *)password {
+//  NSData *encryptedData = [[message dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptedDataUsingKey:[[password dataUsingEncoding:NSUTF8StringEncoding] SHA256Hash] error:nil];
+//  NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
+//  return base64EncodedString;
+//}
 
 @end
