@@ -199,7 +199,7 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
-    //DownloadTask *task = [self getDownloadTaskFromUrl:downloadUrl];
+    
 }
 
 #pragma - mark 懒加载

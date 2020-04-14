@@ -1,22 +1,36 @@
 PODS:
-  - CocoaDownloadSDK (1.0.3):
-    - Reachability
-  - Reachability (3.2)
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - CocoaDownloadSDK (1.0.5):
+    - AFNetworking
 
 DEPENDENCIES:
   - CocoaDownloadSDK (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Reachability
+    - AFNetworking
 
 EXTERNAL SOURCES:
   CocoaDownloadSDK:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CocoaDownloadSDK: 0668911875466feebf89449d90cea357a03abb85
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CocoaDownloadSDK: fb828ccf2a7dd7f238fd71c4215c8d0e367cad4c
 
 PODFILE CHECKSUM: 8013560c7434a53742fbef5208c31ab75222901a
 

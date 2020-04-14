@@ -1,6 +1,6 @@
 {
   "name": "CocoaDownloadSDK",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "summary": "A userful download SDK.",
   "description": "为小翼管家提供的下载SDK，负责底层下载任务管理，高效简洁",
   "homepage": "https://github.com/BlakeHu-ecust/CocoaDownloadSDK",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/BlakeHu-ecust/CocoaDownloadSDK.git",
-    "tag": "1.0.3"
+    "tag": "1.0.5"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,7 +21,7 @@
   "source_files": "CocoaDownloadSDK/Classes/**/*",
   "frameworks": "UIKit",
   "dependencies": {
-    "Reachability": [
+    "AFNetworking": [
 
     ]
   }

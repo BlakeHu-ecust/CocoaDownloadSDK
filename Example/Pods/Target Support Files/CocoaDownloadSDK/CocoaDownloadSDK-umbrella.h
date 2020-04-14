@@ -16,6 +16,7 @@
 #import "CocoaDownloadSession.h"
 #import "CocoaDownloadTask.h"
 #import "CocoaNormalTableViewCell.h"
+#import "NSString+cExtension.h"
 #import "NSURL+cExtension.h"
 #import "NSURLSessionTask+cExtension.h"
 

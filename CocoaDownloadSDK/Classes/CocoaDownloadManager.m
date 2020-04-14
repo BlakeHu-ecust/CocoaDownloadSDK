@@ -9,14 +9,14 @@
 #import "CocoaDownloadConfig.h"
 #import "CocoaDownloadSession.h"
 #import "CocoaDownloadTask.h"
-#import "Reachability.h"
+#import "AFNetworking.h"
 #import "NSURL+cExtension.h"
 //单例
 static CocoaDownloadManager *shared = nil;
 
 
 @interface CocoaDownloadManager()
-@property (nonatomic, assign) NetworkStatus networkStatus;
+@property (nonatomic, assign) AFNetworkReachabilityStatus networkStatus;
 //当前所有任务
 @property (nonatomic, strong) NSMutableArray *tasksList;
 @end
@@ -57,10 +57,15 @@ static CocoaDownloadManager *shared = nil;
 }
 
 - (void)initNetWorkConfig{
-    Reachability *reach = [Reachability reachabilityForInternetConnection];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
-    [reach startNotifier];
-    self.networkStatus = [reach currentReachabilityStatus];
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager manager];
+    __weak typeof(self) weakSelf = self;
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        weakSelf.networkStatus = status;
+        if (weakSelf.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && [[NSUserDefaults standardUserDefaults]boolForKey:cDisableCellular]) {
+            [[CocoaDownloadSession sharedSession] invalidAndRestartSession];
+        }
+    }];
+    [manager startMonitoring];
 }
 
 - (void)initDownloadPath{
@@ -76,11 +81,11 @@ static CocoaDownloadManager *shared = nil;
 }
 
 - (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url config:(DownloadTaskConfig)config error:(DownloadTaskError *)error{
-    if (self.networkStatus == NotReachable) {
+    if (self.networkStatus == AFNetworkReachabilityStatusNotReachable || self.networkStatus == AFNetworkReachabilityStatusUnknown) {
         *error = DownloadTaskErrorInvalidNetWork;
         return nil;
     }
-    if (self.networkStatus == ReachableViaWWAN && [[NSUserDefaults standardUserDefaults]boolForKey:cDisableCellular]) {
+    if (self.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && [[NSUserDefaults standardUserDefaults]boolForKey:cDisableCellular]) {
         *error = DownloadTaskErrorCellular;
         return nil;
     }
@@ -199,26 +204,12 @@ static CocoaDownloadManager *shared = nil;
 - (void)setAllowCellular:(BOOL)allow{
     [[NSUserDefaults standardUserDefaults] setBool:!allow forKey:cDisableCellular];
     //当前是蜂窝网状态，暂停所有任务
-    if (_networkStatus == ReachableViaWWAN && !allow) {
+    if (_networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !allow) {
         [[CocoaDownloadSession sharedSession] invalidAndRestartSession];
     }
 }
-
-#pragma mark - 监听网络环境
-- (void)reachabilityChanged:(NSNotification*)notification{
-    Reachability *reach = [notification object];
-    _networkStatus = [reach currentReachabilityStatus];
-    if (_networkStatus == ReachableViaWWAN && [[NSUserDefaults standardUserDefaults]boolForKey:cDisableCellular]) {
-        [[CocoaDownloadSession sharedSession] invalidAndRestartSession];
-    }
-}
-
 
 #pragma mark - 懒加载
-- (void)setNetworkStatus:(NetworkStatus)networkStatus{
-    _networkStatus = networkStatus;
-}
-
 - (void)setTasksList:(NSMutableArray *)tasksList{
     _tasksList = tasksList ? tasksList : [NSMutableArray new];
     [CocoaDownloadSession sharedSession].tasksList = _tasksList;
