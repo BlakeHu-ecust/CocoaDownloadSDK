@@ -52,12 +52,14 @@ static CocoaDownloadManager *shared = nil;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive) name:UIApplicationWillResignActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
     return self;
 }
 
 - (void)initNetWorkConfig{
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager manager];
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    [manager startMonitoring];
     __weak typeof(self) weakSelf = self;
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         weakSelf.networkStatus = status;
@@ -65,7 +67,6 @@ static CocoaDownloadManager *shared = nil;
             [[CocoaDownloadSession sharedSession] invalidAndRestartSession];
         }
     }];
-    [manager startMonitoring];
 }
 
 - (void)initDownloadPath{
@@ -83,10 +84,12 @@ static CocoaDownloadManager *shared = nil;
 - (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url config:(DownloadTaskConfig)config error:(DownloadTaskError *)error{
     if (self.networkStatus == AFNetworkReachabilityStatusNotReachable || self.networkStatus == AFNetworkReachabilityStatusUnknown) {
         *error = DownloadTaskErrorInvalidNetWork;
+        NSLog(@"网络环境异常");
         return nil;
     }
     if (self.networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && [[NSUserDefaults standardUserDefaults]boolForKey:cDisableCellular]) {
         *error = DownloadTaskErrorCellular;
+        NSLog(@"非法蜂窝网下载");
         return nil;
     }
     
@@ -248,5 +251,9 @@ static CocoaDownloadManager *shared = nil;
 
 - (void)applicationWillResignActive{
     [[CocoaDownloadSession sharedSession] suspendAllTasks];
+}
+
+- (void)applicationDidBecomeActive{
+    [[CocoaDownloadSession sharedSession] startAllTasks];
 }
 @end

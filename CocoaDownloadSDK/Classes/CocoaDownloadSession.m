@@ -67,7 +67,7 @@ static CocoaDownloadSession *shared = nil;
     task.status = Running;
     [downloadTask resume];
     
-    NSLog(@"开始下载任务%@：\nURL：%@\n地址：%@", task.task_id, task.download_url, [task getAbsoluteDownloadPath]);
+    NSLog(@"开始下载任务%@：\nURL：%@\n下载地址：%@", task.task_id, task.download_url, [task getAbsoluteDownloadPath]);
 }
 
 - (void)suspendTask:(CocoaDownloadTask *)task{
@@ -78,10 +78,19 @@ static CocoaDownloadSession *shared = nil;
     [task.task cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
         task.status = Suspended;
         if ([task saveResumedData:resumeData]){
-            NSLog(@"缓存成功");
+            NSLog(@"%@缓存成功",task.title);
         }
     }];
 }
+
+- (void)startAllTasks{
+    NSLog(@"全部开始");
+    for (CocoaDownloadTask *task in _tasksList) {
+        [self startTask:task];
+    }
+    [self saveAllTasksStatus];
+}
+
 
 - (void)suspendAllTasks{
     NSLog(@"全部暂停");

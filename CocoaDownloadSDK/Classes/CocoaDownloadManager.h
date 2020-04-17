@@ -8,8 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "CocoaDownloadTask.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 typedef NS_ENUM(NSUInteger, DownloadTaskError) {
     DownloadTaskErrorNone = 0,
     DownloadTaskErrorDuplicateDownload,//重复任务
@@ -108,5 +106,3 @@ typedef void (^tasksStatusChanged) (NSArray *tasks);
 - (void)disableCellular;
 
 @end
-
-NS_ASSUME_NONNULL_END

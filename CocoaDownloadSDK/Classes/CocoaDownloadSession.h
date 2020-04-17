@@ -25,12 +25,17 @@ NS_ASSUME_NONNULL_BEGIN
 */
 
 - (void)startTask:(CocoaDownloadTask *)task;
+
 /**
 暂停下载任务
 @param task  下载任务
 */
-
 - (void)suspendTask:(CocoaDownloadTask *)task;
+
+/**
+开始所有任务
+*/
+- (void)startAllTasks;
 /**
 暂停所有任务
 */
