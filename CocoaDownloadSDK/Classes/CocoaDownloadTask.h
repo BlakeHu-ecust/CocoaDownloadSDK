@@ -52,11 +52,13 @@ typedef void (^statusChanged) (CocoaDownloadTask *task);
 @property (nonatomic, assign) CGFloat progress;
 //创建时间
 @property (nonatomic, strong, readonly) NSDate *createDate;
+//是否自动重新开始下载
+@property (nonatomic, assign) BOOL autoStart;
 
 @property (nonatomic, strong) NSURLSessionDownloadTask *task;
-
+//监听block
 @property (nonatomic, copy) statusChanged statusChangedBlock;
-
+//事件代理
 @property (nonatomic, weak) id <DownloadTaskDelegate> delegate;
 
 - (instancetype)initWithDownloadUrl:(NSURL *)url;

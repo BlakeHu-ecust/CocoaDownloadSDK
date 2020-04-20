@@ -34,7 +34,7 @@
         self.download_url = url;
         self.localPath = defaultDownloadDir;
         _createDate = [NSDate date];
-        self.title = title;
+        self.title = [title length] ? title : [url getLastPathComponent];
     }
     return self;
 }

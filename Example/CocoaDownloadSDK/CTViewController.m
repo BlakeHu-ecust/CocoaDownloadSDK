@@ -29,7 +29,7 @@
     [_tableView registerNib:[UINib nibWithNibName:@"CTTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     _tableView.tableFooterView = [UIView new];
     //[[CocoaDownloadManager sharedInstance] disableCellular];
-    [[CocoaDownloadManager sharedInstance] setDefalutDownloadPath:@"Test"];
+    [[CocoaDownloadManager sharedInstance] setDefalutDownloadPath:@""];
 
     //[CocoaDownloadManager sharedInstance].delegate = self;
     
@@ -41,7 +41,7 @@
 }
 - (IBAction)download:(id)sender {
     DownloadTaskError error;
-    CocoaDownloadTask *task = [[CocoaDownloadManager sharedInstance] startTaskWithUrl:self.assetURLs[_currentIndex] config:DownloadTaskConfigCreate error:&error];
+    CocoaDownloadTask *task = [[CocoaDownloadManager sharedInstance] startTaskWithUrl:self.assetURLs[_currentIndex] title:nil config:DownloadTaskConfigCreate error:&error];
     if (!task && error) {
         switch (error) {
             case 1:

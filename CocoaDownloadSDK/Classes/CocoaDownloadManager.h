@@ -52,12 +52,22 @@ typedef void (^tasksStatusChanged) (NSArray *tasks);
 /**
 创建任务 通过传入下载链接URL和配置信息创建下载任务
 @param url  下载URL
+@param title 文件名称
+@param error  错误信息
+@return 下载任务
+*/
+- (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url title:(NSString *)title error:(DownloadTaskError *)error;
+
+/**
+创建任务 通过传入下载链接URL和配置信息创建下载任务
+@param url  下载URL
+@param title 文件名称
 @param config  下载任务配置选项
 @param error  错误信息
 @return 下载任务
 */
-- (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url config:(DownloadTaskConfig)config error:(DownloadTaskError *)error;
-
+- (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url title:(NSString *)title config:(DownloadTaskConfig)config error:(DownloadTaskError *)error;
+    
 /**
 开始一项下载任务
 @param task  下载任务
@@ -104,5 +114,7 @@ typedef void (^tasksStatusChanged) (NSArray *tasks);
 设置关闭蜂窝网下载
 */
 - (void)disableCellular;
+
+- (void)cleanAllTasks;
 
 @end

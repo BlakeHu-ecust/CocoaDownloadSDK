@@ -78,10 +78,14 @@ static CocoaDownloadManager *shared = nil;
 
 #pragma mark - 创建新任务
 - (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url error:(DownloadTaskError *)error{
-    return [self startTaskWithUrl:url config:defaultDownloadMode error:error];
+    return [self startTaskWithUrl:url title:nil config:defaultDownloadMode error:error];
 }
 
-- (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url config:(DownloadTaskConfig)config error:(DownloadTaskError *)error{
+- (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url title:(NSString *)title error:(DownloadTaskError *)error{
+    return [self startTaskWithUrl:url title:title config:defaultDownloadMode error:error];
+}
+
+- (CocoaDownloadTask *)startTaskWithUrl:(NSURL *)url title:(NSString *)title config:(DownloadTaskConfig)config error:(DownloadTaskError *)error{
     if (self.networkStatus == AFNetworkReachabilityStatusNotReachable || self.networkStatus == AFNetworkReachabilityStatusUnknown) {
         *error = DownloadTaskErrorInvalidNetWork;
         NSLog(@"网络环境异常");
@@ -93,7 +97,7 @@ static CocoaDownloadManager *shared = nil;
         return nil;
     }
     
-    CocoaDownloadTask *task = [[CocoaDownloadTask alloc]initWithDownloadUrl:url];
+    CocoaDownloadTask *task = [[CocoaDownloadTask alloc]initWithDownloadUrl:url title:title];
     NSString *destination = [task getAbsoluteDownloadPath];
     
     if (config != DownloadTaskConfigCreate && [self checkIsTaskExist:task]) {
@@ -210,6 +214,13 @@ static CocoaDownloadManager *shared = nil;
     if (_networkStatus == AFNetworkReachabilityStatusReachableViaWWAN && !allow) {
         [[CocoaDownloadSession sharedSession] invalidAndRestartSession];
     }
+}
+
+- (void)cleanAllTasks{
+    for (CocoaDownloadTask *task in self.tasksList) {
+        [task remove];
+    }
+    [self.tasksList removeAllObjects];
 }
 
 #pragma mark - 懒加载
